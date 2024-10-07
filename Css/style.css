@@ -1,13 +1,18 @@
+/* Estilo global */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
+#user-container {
+    display: block !important;
+}
 
+/* Header */
 header {
     background-color: #003366;
-    padding: 10px; /* Reducir el padding */
+    padding: 10px;
     text-align: center;
     color: white;
     position: relative;
@@ -16,56 +21,64 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 28px; /* Reducir tamaño del título */
+    font-size: 28px;
 }
 
 header p {
-    margin-top: 5px; /* Reducir el espacio entre título y subtítulo */
-    font-size: 14px; /* Reducir tamaño del subtítulo */
+    margin-top: 5px;
+    font-size: 14px;
 }
 
+/* Contenedor principal para login */
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px; /* Centrado en la página */
+}
 
-.animation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #003366;
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #0056b3;
     color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.animation-container h2 {
-    font-size: 2.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 2s forwards;
+button:hover {
+    background-color: #004494;
 }
 
-.animation-container p {
-    font-size: 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 2s forwards 0.5s;
+.error-message {
+    color: red;
+    margin-top: 10px;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Contenedor de roles */
 .container {
     display: flex;
     justify-content: space-around;
@@ -78,7 +91,7 @@ header p {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 260px; /* Reducir el tamaño de las tarjetas */
+    width: 260px;
     margin: 15px;
     text-align: center;
     transition: transform 0.3s;
@@ -94,13 +107,13 @@ header p {
 }
 
 .card h2 {
-    font-size: 22px; /* Tamaño más pequeño del título */
+    font-size: 22px;
     color: #333;
     margin: 15px 0;
 }
 
 .card p {
-    font-size: 14px; /* Reducir tamaño del texto descriptivo */
+    font-size: 14px;
     padding: 0 15px;
     color: #777;
 }
@@ -108,7 +121,7 @@ header p {
 .card a {
     display: inline-block;
     margin: 15px;
-    padding: 8px 18px; /* Ajustar tamaño del botón */
+    padding: 8px 18px;
     background-color: #00509E;
     color: white;
     text-decoration: none;
@@ -120,9 +133,10 @@ header p {
     background-color: #003366;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 8px; /* Reducir tamaño del footer */
+    padding: 8px;
     background-color: #003366;
     color: white;
     position: fixed;

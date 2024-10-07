@@ -1,0 +1,138 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../Img/Fondo.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Permite que el contenedor de login esté en la columna */
+}
+
+/* Contenedor de la animación de bienvenida */
+.animation-container {
+    position: fixed; /* Posición fija para ocupar toda la pantalla */
+    top: 0; /* Posiciona en la parte superior */
+    left: 0; /* Posiciona a la izquierda */
+    width: 100%; /* Ocupar todo el ancho */
+    height: 100%; /* Ocupar toda la altura */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: rgba(0, 40, 86, 0.8); /* Fondo más oscuro */
+    color: white; /* Color del texto */
+    animation: backgroundColorChange 3s infinite; /* Animación de fondo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Efecto de cambio de color de fondo */
+@keyframes backgroundColorChange {
+    0% { background-color: rgba(0, 40, 86, 0.8); }
+    50% { background-color: rgba(0, 80, 130, 0.9); }
+    100% { background-color: rgba(0, 40, 86, 0.8); }
+}
+
+
+h2 {
+    font-size: 28px; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+}
+
+p {
+    font-size: 20px; /* Tamaño de fuente más grande para el texto */
+    color: #fff; /* Color blanco para el texto */
+}
+
+/* Estilos para el contenedor de login */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 30px; /* Espaciado interno */
+    max-width: 400px; /* Ancho máximo */
+    width: 90%; /* Ancho del contenedor */
+}
+.card {
+    width: 300px; /* Aumentado para mejorar la usabilidad */
+    padding: 2rem;
+    text-align: center;
+    background: #3b3f4d; /* Color de fondo más claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+}
+  
+  /*Inputs*/
+.field {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    background-color: #282c34; /* Color más suave */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: .5em 1em;
+}
+  
+  .input-icon {
+    height: 1.2em;
+    width: 1.2em;
+    fill: #ffdf7e; /* Color de icono más suave */
+}
+  
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #e0e0e0; /* Color de texto más suave */
+}
+  
+  /*Text*/
+.title {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+    font-weight: 600; /* Más negrita */
+    color: #fefefe; /* Color de texto más brillante */
+}
+  
+  /*Buttons*/
+  .btn {
+    margin: 1rem;
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold;
+    font-size: .9em; /* Tamaño de fuente ligeramente mayor */
+    text-transform: uppercase;
+    padding: 0.6em 1.2em;
+    background-color: #ffdf7e; /* Color de fondo del botón */
+    color: #4b4f5a; /* Color de texto del botón más oscuro */
+    box-shadow: 0 6px 20px rgba(255, 223, 126, 0.3); /* Sombra más suave */
+    transition: all .3s ease-in-out;
+  }
+  
+  .btn-link {
+    color: #dcdcdc; /* Color de texto del enlace más suave */
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+  }
+  
+  /*Hover & focus*/
+  .field input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  
+  .btn:hover {
+    background-color: #4b4f5a; /* Color de fondo en hover */
+    color: #ffdf7e; /* Color de texto en hover */
+    box-shadow: 0 8px 24px rgba(16, 39, 112, 0.3); /* Sombra en hover */
+  }
+  
+  .btn-link:hover {
+    color: #ffdf7e; /* Color del enlace en hover */
+  }
+  
