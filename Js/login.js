@@ -1,17 +1,11 @@
 // Mostrar la animación al cargar la página
 window.onload = function() {
-    // Ocultar el formulario de inicio de sesión
-    document.getElementById('login-container').style.display = 'none';
-
-    // Mostrar la animación
-    const animationContainer = document.getElementById('animation-container');
-    animationContainer.style.display = 'flex'; // Asegúrate de mostrarlo como un flex container
-
-    // Espera 3 segundos antes de mostrar el formulario de inicio de sesión
-    setTimeout(() => {
-        animationContainer.style.display = 'none'; // Ocultar la animación
-        document.getElementById('login-container').style.display = 'block'; // Mostrar el formulario
-    }, 3000); // Cambia 3000 a la duración en milisegundos que desees
+    // Muestra la animación de bienvenida durante 3 segundos
+    document.body.classList.add('content-hidden'); // Oculta el contenido detrás de la animación
+    setTimeout(function() {
+        document.getElementById('animation-container').style.display = 'none';
+        document.body.classList.remove('content-hidden'); // Muestra el contenido cuando la animación termina
+    }, 3000); // Ajusta el tiempo según la duración de tu animación
 };
 
 // Función para mostrar y ocultar elementos
@@ -31,31 +25,48 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const email = document.getElementById('logemail').value; // Asegúrate de que el ID sea correcto
     const password = document.getElementById('logpass').value; // Asegúrate de que el ID sea correcto
 
-    // Credenciales simuladas
-    const users = {
-        admin: { password: 'admin123', role: 'Administrador' },
-        gerente: { password: 'gerente123', role: 'Gerente' },
-        cajero: { password: 'cajero123', role: 'Cajero' }
+    // Preparar el cuerpo de la solicitud con las credenciales
+    const data = {
+        email: email,
+        password: password
     };
 
-    // Verificar credenciales
-    if (users[email] && users[email].password === password) {
-        // Ocultar formulario de login
-        toggleVisibility('login-container', false);
-        
-        // Mostrar animación de "cargando experiencia"
-        const animationContainer = document.getElementById('animation-container');
-        toggleVisibility('animation-container', true);
+    // Realizar la solicitud a la API para verificar el usuario
+    fetch('http://localhost:8080/CineBites/usuarios', {
+        method: 'POST', // Usar el método adecuado según tu API (puede ser GET o POST)
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Credenciales incorrectas'); // Manejar el error de credenciales
+        }
+        return response.json(); // Convertir la respuesta a JSON
+    })
+    .then(user => {
+        // Si la autenticación es correcta
+        if (user && user.role) {
+            // Ocultar formulario de login
+            toggleVisibility('login-container', false);
 
-        // Guardar el rol del usuario
-        localStorage.setItem('userRole', users[email].role);
-        
-        // Espera 3 segundos antes de redirigir
-        setTimeout(() => {
-            window.location.href = './roles.html';
-        }, 3000); // Cambia 3000 a la duración en milisegundos que desees
+            // Mostrar animación de "cargando experiencia"
+            toggleVisibility('animation-container', true);
 
-    } else {
-        errorMessage.textContent = 'Usuario o contraseña incorrectos';
-    }
+            // Guardar el rol del usuario en localStorage
+            localStorage.setItem('userRole', user.role);
+            
+            // Esperar 3 segundos antes de redirigir
+            setTimeout(() => {
+                window.location.href = './roles.html'; // Redirigir a la página de roles
+            }, 3000); // Cambia 3000 a la duración en milisegundos que desees
+        } else {
+            throw new Error('Usuario o contraseña incorrectos');
+        }
+    })
+    .catch(error => {
+        // Mostrar mensaje de error si las credenciales son incorrectas
+        errorMessage.textContent = 'Error en el inicio de sesión: ' + error.message;
+    });
 });
