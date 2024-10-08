@@ -10,6 +10,11 @@ El frontend está desarrollado utilizando **HTML**, **CSS** y **JavaScript puro*
 
 Para más detalles sobre la arquitectura y funcionamiento del sistema, consulta en <a href="https://wind-evening-0e9.notion.site/CineBites-Frontend-113a725d261f8099a83fc18cee8768eb?pvs=4" target="_blank">Notion</a>.
 
+### 🖥️ **Presentación del Proyecto**
+
+Si quieres conocer más sobre **CineBites** y cómo este sistema mejora la eficiencia de las operaciones en la zona de comida de un cine, puedes ver la **presentación del proyecto** en el siguiente enlace:
+
+👉 [**Presentación de CineBites**](https://www.canva.com/design/DAGS-xzBY4k/kMcvkBwIu01H4VQ7shahhA/edit)
 
 ### 🛠️ **Tecnologías Principales**
 
