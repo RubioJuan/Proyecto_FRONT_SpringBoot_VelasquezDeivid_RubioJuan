@@ -1,0 +1,56 @@
+body, html {
+    height: 100%; /* Asegúrate de que el body y html ocupen toda la altura de la pantalla */
+    margin: 0; /* Elimina márgenes por defecto */
+}
+
+.svg-container {
+    display: flex; /* Utiliza flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+svg {
+    max-width: 100%; /* Asegúrate de que el SVG no sobresalga */
+    height: auto; /* Mantiene la proporción del SVG */
+}
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #c5c5c5;
+    line-height: 22px;
+  }
+  a {
+    color: #626262;
+  }
+  .fa {
+    font-size: 18px;
+    top: 2px;
+    position: relative;
+    margin-left: 2px;
+  }
+  a img {
+    width: 60px;
+    position: relative;
+    top: 3px;
+  }
+  .social {
+    position: fixed;
+    right: 40px;
+    top: 20px;
+  }
+
+  @keyframes ejemplo {
+    from { transform: scale(1); }
+    to { transform: scale(2); }
+}
+
+circle {
+    animation: ejemplo 0.5s infinite alternate;
+}
+#CornFly {
+    visibility: visible; /* Asegúrate de que sea visible */
+    position: absolute; /* Asegúrate de que esté en la posición correcta */
+}
