@@ -1,19 +1,33 @@
 /* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background: url('../Img/Fondo.jpg') no-repeat center center fixed; /* Imagen de fondo */
-  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-  margin: 0; /* Elimina el margen predeterminado del body */
+  background: url('../Img/Fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column; /* Permite que el contenedor de login esté en la columna */
+  flex-direction: column;
+  position: relative; /* Para que el pseudo-elemento cubra el fondo */
+  z-index: 1;
+}
+
+/* Capa de opacidad sobre la imagen de fondo */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Color negro con opacidad */
+  z-index: -1; /* Coloca esta capa detrás del contenido */
 }
 
 /* Contenedor de la animación de bienvenida */
 .animation-container {
-  position: fixed; /* Asegura que la animación cubra toda la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,15 +36,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 86, 179, 1); /* Fondo sólido, sin transparencia */
+  background-color: rgba(0, 86, 179, 1);
   color: white;
-  z-index: 1000; /* Muy por encima del resto */
-  animation: backgroundColorChange 3s infinite; /* Animación de fondo */
+  z-index: 1000;
+  animation: backgroundColorChange 3s infinite;
 }
 
-/* Oculta el contenido del body durante la animación */
 body.content-hidden {
-  overflow: hidden; /* Desactiva el scroll mientras se muestra la animación */
+  overflow: hidden;
 }
 
 /* Efecto de cambio de color de fondo (si lo quieres mantener) */
@@ -40,7 +53,6 @@ body.content-hidden {
   100% { background-color: rgba(0, 86, 179, 1); }
 }
 
-
 /* Estilos para el contenedor de login */
 .card {
   background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el login */
@@ -49,7 +61,7 @@ body.content-hidden {
   width: 300px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #fff; /* Texto en blanco para contraste */
+  color: #fff;
 }
 
 h2 {
@@ -62,13 +74,13 @@ p {
   color: #fff;
 }
 
-/*Inputs*/
+/* Inputs */
 .field {
   margin-top: 1rem;
   display: flex;
   align-items: center;
   gap: .5em;
-  background-color: #282c34; /* Color suave para los inputs */
+  background-color: #282c34;
   border-radius: 5px;
   padding: .5em 1em;
 }
@@ -87,7 +99,7 @@ p {
   color: #ffffff;
 }
 
-/*Text*/
+/* Text */
 .title {
   margin-bottom: 1rem;
   font-size: 1.5em;
@@ -95,7 +107,7 @@ p {
   color: #7e7676;
 }
 
-/*Botones*/
+/* Botones */
 .btn {
   margin-top: 1rem;
   border: none;
@@ -105,7 +117,7 @@ p {
   padding: 0.6em 1.2em;
   background-color: #ffdf7e;
   color: #4b4f5a;
-  width: 100%; /* Botón centrado con ancho completo */
+  width: 100%;
   box-shadow: 0 6px 20px rgba(255, 223, 126, 0.3);
   transition: all .3s ease-in-out;
 }
@@ -118,14 +130,14 @@ p {
 
 /* Estilos para el footer */
 footer {
-  margin-top: 1rem; /* Reduce el margen superior */
+  margin-top: 1rem;
   text-align: center;
-  font-size: 0.75em; /* Tamaño de fuente pequeño */
+  font-size: 0.75em;
   color: #fff;
-  padding: 0.5rem 0; /* Reduce el padding para que sea más compacto */
+  padding: 0.5rem 0;
 }
 
 .input-icon {
-  font-size: 1.5em; /* Ajusta el tamaño del emoji */
-  margin-right: 0.5em; /* Ajusta el espaciado entre el emoji y el input */
+  font-size: 1.5em;
+  margin-right: 0.5em;
 }

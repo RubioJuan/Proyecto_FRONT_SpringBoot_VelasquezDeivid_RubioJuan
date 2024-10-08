@@ -27,12 +27,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Preparar el cuerpo de la solicitud con las credenciales
     const data = {
-        email: email,
-        password: password
+        nombreUsuario: email,
+        contrasena: password
     };
 
     // Realizar la solicitud a la API para verificar el usuario
-    fetch('http://localhost:8080/CineBites/usuarios', {
+    fetch('http://209.145.51.162:8080/CineBites/login', {
         method: 'POST', // Usar el método adecuado según tu API (puede ser GET o POST)
         headers: {
             'Content-Type': 'application/json'
