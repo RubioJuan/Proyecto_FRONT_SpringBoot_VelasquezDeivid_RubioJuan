@@ -1,6 +1,5 @@
 // Mostrar la animación al cargar la página
 window.onload = function() {
-    // Muestra la animación de bienvenida durante 3 segundos
     document.body.classList.add('content-hidden'); // Oculta el contenido detrás de la animación
     setTimeout(function() {
         document.getElementById('animation-container').style.display = 'none';
@@ -22,18 +21,22 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const errorMessage = document.getElementById('error-message');
     errorMessage.textContent = ''; // Limpiar el mensaje de error
 
-    const email = document.getElementById('logemail').value; // Asegúrate de que el ID sea correcto
-    const password = document.getElementById('logpass').value; // Asegúrate de que el ID sea correcto
+    const email = document.getElementById('logemail').value;
+    const password = document.getElementById('logpass').value;
 
-    // Preparar el cuerpo de la solicitud con las credenciales
     const data = {
         nombreUsuario: email,
         contrasena: password
     };
 
+    // Mostrar la animación de carga al hacer clic en el botón de "Ingresar"
+    document.getElementById('login-container').style.display = 'none'; // Ocultar el formulario
+    document.getElementById('animation-container').style.display = 'block'; // Mostrar animación
+
     // Realizar la solicitud a la API para verificar el usuario
     fetch('http://209.145.51.162:8080/CineBites/login', {
-        method: 'POST', // Usar el método adecuado según tu API (puede ser GET o POST)
+        method: 'POST',
+        mode:'cors',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -41,32 +44,29 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Credenciales incorrectas'); // Manejar el error de credenciales
+            throw new Error('Credenciales incorrectas');
         }
-        return response.json(); // Convertir la respuesta a JSON
+        return response.json();
     })
     .then(user => {
-        // Si la autenticación es correcta
         if (user && user.role) {
-            // Ocultar formulario de login
-            toggleVisibility('login-container', false);
-
-            // Mostrar animación de "cargando experiencia"
-            toggleVisibility('animation-container', true);
-
             // Guardar el rol del usuario en localStorage
             localStorage.setItem('userRole', user.role);
-            
-            // Esperar 3 segundos antes de redirigir
+
+            // Esperar 3 segundos antes de redirigir a la página de roles
             setTimeout(() => {
-                window.location.href = './roles.html'; // Redirigir a la página de roles
-            }, 3000); // Cambia 3000 a la duración en milisegundos que desees
+                window.location.href = './roles.html';
+            }, 3000); // Cambia este tiempo según la duración de la animación
         } else {
             throw new Error('Usuario o contraseña incorrectos');
         }
     })
     .catch(error => {
-        // Mostrar mensaje de error si las credenciales son incorrectas
+        // Ocultar la animación y volver a mostrar el formulario si hay un error
+        toggleVisibility('animation-container', false);
+        toggleVisibility('login-container', true);
+
+        // Mostrar mensaje de error
         errorMessage.textContent = 'Error en el inicio de sesión: ' + error.message;
     });
 });
