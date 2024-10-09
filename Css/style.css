@@ -5,9 +5,6 @@ body {
     margin: 0;
     padding: 0;
 }
-#user-container {
-    display: block !important;
-}
 
 /* Header */
 header {
@@ -95,6 +92,7 @@ button:hover {
     margin: 15px;
     text-align: center;
     transition: transform 0.3s;
+    justify-content: center;
 }
 
 .card:hover {

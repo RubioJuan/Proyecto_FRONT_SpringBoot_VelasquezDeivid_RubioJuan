@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
+    console.log('Token: ', token);
     const userRole = localStorage.getItem('userRole');
     const container = document.getElementById('user-container');
 
@@ -9,66 +10,105 @@ window.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/index.html';  // Cambia esto según la ruta de tu login
         return;
     }
-
+    
     // Definir las tarjetas según el rol del usuario
     const roles = {
         'Administrador': `
             <div class="card">
-                <img src="https://i.pinimg.com/564x/8c/28/f4/8c28f45027000f49b0d7ff550acde29f.jpg" alt="Categorías">
-                <h2>Administrador</h2>
-                <p>Gestiona todas las categorías de productos</p>
-                <a href="http://localhost:8080/CineBites/" class="ingresar-btn">Ingresar</a>
+                <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Categorías">
+                <h2>Gestión de clientes</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/554/554795.png" alt="Categorías">
+                <h2>Gestión de empleados</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/empleados.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.freepik.com/256/12201/12201509.png?semt=ais_hybrid" alt="Categorías">
+                <h2>Gestión de inventario</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/inventario.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.freepik.com/512/12516/12516291.png" alt="Categorías">
+                <h2>Gestión de promociones</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/promociones.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Categorías">
+                <h2>Gestión de ventas</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/5674/5674015.png" alt="Categorías">
+                <h2>Gestión de reportes</h2>
+                <p>Tiene acceso a todo el sistema</p>
+                <a href="../View/reportes.html" class="ingresar-btn">Ingresar</a>
             </div>`,
         'Gerente': `
             <div class="card">
-                <img src="https://i.pinimg.com/564x/4f/e3/20/4fe32088a07b8a4d51791e4688f3e150.jpg" alt="Inventario">
-                <h2>Gerente</h2>
+                <img src="https://cdn-icons-png.freepik.com/256/12201/12201509.png?semt=ais_hybrid" alt="Inventario">
+                <h2>Gestión inventario</h2>
                 <p>Revisa el stock de productos y actualiza su información</p>
-                <a href="http://localhost:8080/CineBites/" class="ingresar-btn">Ingresar</a>
+                <a href="../View/inventario.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Inventario">
+                <h2>Gestión clientes</h2>
+                <p>Revisa el stock de productos y actualiza su información</p>
+                <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Inventario">
+                <h2>Gestión ventas</h2>
+                <p>Revisa el stock de productos y actualiza su información</p>
+                <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
             </div>`,
         'Cajero': `
             <div class="card">
-                <img src="https://i.pinimg.com/564x/38/a4/37/38a437b9d9fe614a97ba61463178f06d.jpg" alt="Clientes">
-                <h2>Cajero</h2>
-                <p>Consulta y administra la información de tus clientes</p>
-                <a href="http://localhost:8080/CineBites/" class="ingresar-btn">Ingresar</a>
+                <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Clientes">
+                <h2>Gestión de ventas</h2>
+                <p>Consulta y administra la información de las ventas</p>
+                <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Clientes">
+                <h2>Gestión de clientes</h2>
+                <p>Consulta y administra la información de las ventas</p>
+                <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
             </div>`
     };
 
-    // Convertir el rol recuperado a un formato que coincida con las claves definidas
     const roleMap = {
         'ROLE_ADMIN': 'Administrador',
         'ROLE_GERENTE': 'Gerente',
         'ROLE_CAJERO': 'Cajero'
     };
 
-    // Asegúrate de que el rol en el localStorage coincida con el mapeo
     const normalizedRole = roleMap[userRole] || null;
 
-    // Verificar si el rol del usuario es válido y mostrar la tarjeta correspondiente
     if (normalizedRole && roles[normalizedRole]) {
         container.innerHTML = roles[normalizedRole];
-        container.style.display = 'flex';  // Mostrar el contenedor si el rol es válido
+        container.classList.add('roles-container');  // Usa la clase nueva para roles
+        container.style.display = 'flex';  
 
-        // Asignar el token al header de la solicitud cuando el usuario hace clic en "Ingresar"
         document.querySelectorAll('.ingresar-btn').forEach(button => {
             button.addEventListener('click', (event) => {
-                event.preventDefault();  // Prevenir la redirección inmediata
-                
-                const href = event.target.getAttribute('href');  // Obtener el href de la tarjeta
-                
-                // Redirigir manualmente con el token en el encabezado
+                event.preventDefault();
+                const href = event.target.getAttribute('href');
                 fetch(href, {
                     method: 'GET',
                     headers: {
-                        'Authorization': `Bearer ${token}` // Añadir el token al encabezado
+                        'Authorization': `Bearer ${token}`
                     }
                 })
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('No tienes autorización para acceder a este recurso.');
-                    }
-                    // Redirigir a la página del enlace después de la autorización
+                    if (!response.ok) throw new Error('No tienes autorización.');
                     window.location.href = href;
                 })
                 .catch(error => {

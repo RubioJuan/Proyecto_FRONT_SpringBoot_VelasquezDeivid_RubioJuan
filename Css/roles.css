@@ -1,0 +1,113 @@
+/* Ajustes para las tarjetas de roles */
+.roles-container {
+    display: flex; /* Usa flexbox para organizar las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: flex-start; /* Cambia a flex-start para alinear las tarjetas en la parte superior */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+    margin: 20px;
+    height: calc(100vh - 50px); /* Ajusta la altura total para que baje un poco */
+    padding-top: 50px; /* Agrega un padding en la parte superior */
+}
+
+/* Estilos de las tarjetas */
+.roles-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 400px; /* Aumenta el ancho de la tarjeta */
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Ajustes para diferentes dispositivos */
+@media (max-width: 768px) {
+    .roles-card {
+        width: 90%; /* Mantiene el 90% en pantallas pequeñas */
+        margin: 10px auto;
+    }
+}
+
+/* Resto de tus estilos... */
+
+
+/* Cartas con Efecto de Hover */
+.roles-card:hover {
+    transform: scale(1.05); /* Agrandar ligeramente */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Sombras más profundas al hacer hover */
+}
+
+/* Efecto de resplandor */
+.roles-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 150, 255, 0.2);
+    transform: rotate(45deg);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.roles-card:hover::before {
+    opacity: 1;
+}
+
+/* Imagen */
+.roles-card img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Título */
+.roles-card h2 {
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0;
+    transition: color 0.3s;
+}
+
+.roles-card:hover h2 {
+    color: #00509E; /* Cambia de color cuando se hace hover */
+}
+
+/* Descripción */
+.roles-card p {
+    font-size: 14px;
+    padding: 0 15px;
+    color: #555; /* Color un poco más oscuro */
+}
+
+/* Botón */
+.roles-card a {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 20px; /* Botón un poco más grande */
+    background-color: #00509E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.roles-card a:hover {
+    background-color: #003366;
+    transform: translateY(-3px); /* Sutil efecto de levantamiento en el botón */
+}
+
+/* Animación suave para la entrada de las cartas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
