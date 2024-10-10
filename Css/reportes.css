@@ -1,0 +1,134 @@
+/* Estilos generales */
+body {
+    background-color: #c9bbbbcc; /* Color de fondo claro */
+    color: #333; /* Color de texto oscuro */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Estilo del título principal */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007BFF; /* Azul brillante */
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 15px;
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+/* Estilo de etiquetas */
+label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block; /* Asegurar que cada etiqueta esté en su propia línea */
+}
+
+/* Estilo de select y inputs */
+select, input[type="date"], input[type="text"], input[type="number"] {
+    width: calc(100% - 20px); /* Ancho del 100% menos márgenes */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #007BFF; /* Borde azul */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Estilo de botones */
+button {
+    background-color: #007BFF; /* Azul brillante */
+    color: white; /* Texto blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilo de tablas */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Colapsar bordes */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* Borde gris claro */
+}
+
+th {
+    background-color: #007BFF; /* Azul brillante para encabezados */
+    color: white; /* Texto blanco */
+}
+
+/* Estilos para tablas alternas */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Color de fondo para filas pares */
+}
+
+#report-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 40vh;
+    width: 80vw;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Color azul para el título */
+}
+
+/* Estilo del botón de regresar */
+#backButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(44, 44, 44, 0.5);
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+#backButton:hover {
+    background-color: rgba(0, 123, 255, 1);
+}
+
+#backButton img {
+    width: 30px;
+    height: 30px;
+}

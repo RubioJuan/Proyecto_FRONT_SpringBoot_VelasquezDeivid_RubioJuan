@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/inventario.css"> <!-- Agrega tu CSS aquí -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3418/3418886.png" type="image/x-icon">
+    <title>CineBites - Inventario</title>
+</head>
+<body>
+    <h1>Gestión de Productos</h1>
+    <div class="container">
+        <!-- Formulario de gestión de productos -->
+        <form id="productoForm" class="formulario-producto">
+            <label for="productoId">ID Producto (Solo para Actualizar o Eliminar):</label>
+            <input type="number" id="productoId" /><br>
+
+            <label for="codigo_producto">Código del Producto:</label>
+            <input type="text" id="codigo_producto" required /><br>
+
+            <label for="nombre_producto">Nombre del Producto:</label>
+            <input type="text" id="nombre_producto" required /><br>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" required></textarea><br>
+
+            <label for="precio_unitario">Precio Unitario:</label>
+            <input type="number" id="precio_unitario" step="0.01" required /><br>
+
+            <label for="cantidadDisponible">Cantidad Disponible:</label>
+            <input type="number" id="cantidadDisponible" required /><br>
+
+            <label for="umbral">Umbral:</label>
+            <input type="number" id="umbral" required /><br>
+
+            <button type="submit">Guardar Producto</button>
+            <button type="button" id="eliminarProductoBtn">Eliminar Producto</button>
+        </form>
+
+        <!-- Mensaje de error si algo falla -->
+        <p id="productoErrorMessage" style="color: red;"></p>
+
+        <!-- Tabla para mostrar la lista de productos -->
+        <div class="productos-listado">
+            <h2>Lista de Productos</h2>
+            <table id="productosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad Disponible</th>
+                        <th>Umbral</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los productos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para regresar -->
+    <div id="backButton" title="Regresar" onclick="window.history.back()">
+        <img src="https://cdn-icons-png.flaticon.com/512/5397/5397386.png" alt="Regresar" />
+    </div>
+
+    <!-- Script para gestionar los productos -->
+    <script src="../Js/inventario.js" defer></script>
+</body>
+</html>

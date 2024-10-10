@@ -13,7 +13,7 @@
 .roles-card {
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(41, 38, 38, 0.15);
     width: 400px; /* Aumenta el ancho de la tarjeta */
     margin: 15px;
     text-align: center;
@@ -37,7 +37,7 @@
 /* Cartas con Efecto de Hover */
 .roles-card:hover {
     transform: scale(1.05); /* Agrandar ligeramente */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Sombras más profundas al hacer hover */
+    box-shadow: 0 12px 20px rgba(66, 66, 66, 0.3); /* Sombras más profundas al hacer hover */
 }
 
 /* Efecto de resplandor */
@@ -48,7 +48,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: rgba(0, 150, 255, 0.2);
+    background: rgba(83, 86, 88, 0.2);
     transform: rotate(45deg);
     transition: opacity 0.5s ease;
     opacity: 0;
@@ -67,20 +67,20 @@
 /* Título */
 .roles-card h2 {
     font-size: 22px;
-    color: #333;
+    color: #746d6d;
     margin: 15px 0;
     transition: color 0.3s;
 }
 
 .roles-card:hover h2 {
-    color: #00509E; /* Cambia de color cuando se hace hover */
+    color: #2577ca; /* Cambia de color cuando se hace hover */
 }
 
 /* Descripción */
 .roles-card p {
     font-size: 14px;
     padding: 0 15px;
-    color: #555; /* Color un poco más oscuro */
+    color: #363232; /* Color un poco más oscuro */
 }
 
 /* Botón */
@@ -110,4 +110,27 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Estilo del botón de regresar */
+#backButton {
+    position: fixed; /* Fijo para que se mantenga en la esquina */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: rgba(0, 123, 255, 0.8); /* Fondo azul semitransparente */
+    border-radius: 50%; /* Botón redondo */
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    transition: background-color 0.3s;
+    z-index: 1000; /* Para que esté por encima de otros elementos */
+}
+
+#backButton:hover {
+    background-color: rgba(0, 123, 255, 1); /* Cambia el fondo al pasar el mouse */
+}
+
+#backButton img {
+    width: 30px; /* Tamaño del icono */
+    height: 30px;
 }

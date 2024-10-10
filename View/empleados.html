@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBites - Empleados</title>
+    <link rel="stylesheet" href="../Css/empleados.css"> <!-- Agrega tu CSS aquí -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/512/3418/3418886.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Gestión de Empleados</h1>
+    <div class="container"> 
+        <!-- Formulario de gestión de empleados -->
+        <form id="empleadoForm">
+            <!-- Campo de ID visible -->
+            <label for="empleadoId">ID Empleado (Solo para Actualizar o Eliminar):</label>
+            <input type="number" id="empleadoId" /><br>
+
+            <label for="identificacion">Identificación:</label>
+            <input type="text" id="identificacion" required /><br>
+
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" required /><br>
+
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required /><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" /><br>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" /><br>
+
+            <label for="rolSelect">Rol:</label>
+            <select id="rolSelect" required>
+                <!-- Las opciones de rol se llenarán automáticamente -->
+            </select><br>
+
+            <!-- Botones para guardar o eliminar empleados -->
+            <button type="submit">Guardar Empleado</button>
+            <button type="button" id="eliminarEmpleadoBtn">Eliminar Empleado</button>
+        </form>
+
+        <!-- Mensaje de error si algo falla -->
+        <p id="empleadoErrorMessage" style="color: red;"></p>
+
+        <!-- Tabla para mostrar los empleados existentes -->
+        <div class="empleados-listado">
+            <h2>Empleados Existentes</h2>
+            <table id="empleadosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Identificación</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de empleados se llenarán con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para regresar -->
+    <div id="backButton" title="Regresar" onclick="window.history.back()">
+        <img src="https://cdn-icons-png.flaticon.com/512/5397/5397386.png" alt="Regresar" />
+    </div>
+    
+    <!-- Script para gestionar los empleados -->
+    <script src="../Js/empleados.js" defer></script>
+</body>

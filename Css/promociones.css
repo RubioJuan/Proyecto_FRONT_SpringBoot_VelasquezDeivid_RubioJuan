@@ -1,0 +1,174 @@
+/* Fondo general */
+body {
+    background-color: #c9bbbbcc;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Estilo del título */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #2b77c9;
+    text-shadow: 3px 3px 10px rgba(134, 132, 132, 0.9);
+    letter-spacing: 2px;
+}
+
+/* Estilo del contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el formulario y la tabla */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(40, 40, 40, 0.9); /* Fondo para el contenedor */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 30px #000000b3; /* Sombra */
+}
+
+/* Estilo del formulario */
+.formulario-producto {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 20px; /* Espacio entre el formulario y la tabla */
+    background-color: rgba(99, 92, 92, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(63, 61, 61, 0.9);
+}
+
+/* Estilo de etiquetas */
+label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+    color: #709ecf;
+}
+
+/* Estilo de inputs */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    background-color: #3b3535;
+    color: #ffffff;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus{
+    border-color: #0056b3;
+    background-color: #2b2828;
+}
+
+/* Estilo de botones */
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #ffffff;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #007BFF);
+    transform: scale(1.05);
+}
+
+/* Estilo del mensaje de error */
+#productoErrorMessage {
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Tabla de productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: rgba(80, 76, 76, 0.8);
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2b77c9;
+    text-shadow: 3px 3px 10px rgba(134, 132, 132, 0.9);
+    letter-spacing: 2px;
+}
+
+th {
+    background-color: #4380c2;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+.no-data td {
+    text-align: center;
+    padding: 20px;
+    color: #304963;
+}
+
+/* Estilo del botón de regresar */
+#backButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(44, 44, 44, 0.5);
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+#backButton:hover {
+    background-color: rgba(0, 123, 255, 1);
+}
+
+#backButton img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilo del contenedor de la lista de productos */
+.productos-listado {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-top: 0; /* Alinea con el formulario */
+    max-width: 1200px; /* Asegúrate de que no se expanda demasiado */
+    margin: 20px auto; /* Centra el contenedor */
+    background: rgba(80, 76, 76, 0.8); /* Fondo para la tabla */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra para efecto */
+}

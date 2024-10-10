@@ -17,69 +17,69 @@ window.addEventListener('DOMContentLoaded', () => {
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Categorías">
                 <h2>Gestión de clientes</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Clientes</p>
                 <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/554/554795.png" alt="Categorías">
                 <h2>Gestión de empleados</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Empleados</p>
                 <a href="../View/empleados.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.freepik.com/256/12201/12201509.png?semt=ais_hybrid" alt="Categorías">
                 <h2>Gestión de inventario</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Inventario</p>
                 <a href="../View/inventario.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.freepik.com/512/12516/12516291.png" alt="Categorías">
                 <h2>Gestión de promociones</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Promociones</p>
                 <a href="../View/promociones.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Categorías">
                 <h2>Gestión de ventas</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Ventas</p>
                 <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/5674/5674015.png" alt="Categorías">
                 <h2>Gestión de reportes</h2>
-                <p>Tiene acceso a todo el sistema</p>
+                <p>Reportes</p>
                 <a href="../View/reportes.html" class="ingresar-btn">Ingresar</a>
             </div>`,
         'Gerente': `
             <div class="card">
                 <img src="https://cdn-icons-png.freepik.com/256/12201/12201509.png?semt=ais_hybrid" alt="Inventario">
                 <h2>Gestión inventario</h2>
-                <p>Revisa el stock de productos y actualiza su información</p>
+                <p>Inventario</p>
                 <a href="../View/inventario.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Inventario">
                 <h2>Gestión clientes</h2>
-                <p>Revisa el stock de productos y actualiza su información</p>
+                <p>Clientes</p>
                 <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Inventario">
                 <h2>Gestión ventas</h2>
-                <p>Revisa el stock de productos y actualiza su información</p>
+                <p>Ventas</p>
                 <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
             </div>`,
         'Cajero': `
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/994/994649.png" alt="Clientes">
                 <h2>Gestión de ventas</h2>
-                <p>Consulta y administra la información de las ventas</p>
+                <p>Ventas</p>
                 <a href="../View/ventas.html" class="ingresar-btn">Ingresar</a>
             </div>
             <div class="card">
                 <img src="https://cdn-icons-png.flaticon.com/512/4814/4814852.png" alt="Clientes">
                 <h2>Gestión de clientes</h2>
-                <p>Consulta y administra la información de las ventas</p>
+                <p>Clientes</p>
                 <a href="../View/clientes.html" class="ingresar-btn">Ingresar</a>
             </div>`
     };

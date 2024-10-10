@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBites - Reportes</title>
+    <link rel="stylesheet" href="../Css/reportes.css"> <!-- Optional CSS file for styling -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3418/3418886.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Reporte de Ventas</h1>
+
+    <div class="container">
+        <!-- Dropdown para seleccionar un empleado -->
+        <div class="section">
+            <label for="empleadoSelect">Seleccionar Empleado:</label>
+            <select id="empleadoSelect"></select>
+            <button id="obtenerVentasBtn">Obtener Ventas</button>
+        </div>
+
+        <!-- Tabla para mostrar ventas por empleado -->
+        <div class="section">
+            <h2>Ventas por Empleado</h2>
+            <table id="ventasEmpleadoTable">
+                <thead>
+                    <tr>
+                        <th>ID Venta</th>
+                        <th>Fecha Venta</th>
+                        <th>Subtotal</th>
+                        <th>Total</th>
+                        <th>Impuesto</th>
+                        <th>Empleado</th>
+                        <th>Cliente</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Dropdown para seleccionar un producto -->
+        <div class="section">
+            <label for="productoSelect">Seleccionar Producto:</label>
+            <select id="productoSelect"></select>
+            <button id="obtenerVentasProductoBtn">Obtener Ventas por Producto</button>
+        </div>
+
+        <!-- Tabla para mostrar detalle de ventas por producto -->
+        <div class="section">
+            <h2>Detalle de Ventas por Producto</h2>
+            <table id="detalleVentasProductoTable">
+                <thead>
+                    <tr>
+                        <th>Nombre Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Tabla para mostrar productos agotados -->
+        <div class="section">
+            <h2>Productos Agotados</h2>
+            <table id="productosAgotadosTable">
+                <thead>
+                    <tr>
+                        <th>ID Producto</th>
+                        <th>Nombre Producto</th>
+                        <th>Cantidad Disponible</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Formulario para seleccionar rango de fechas -->
+        <div class="section">
+            <h2>Ventas por Rango de Fechas</h2>
+            <form id="rangoFechasForm">
+                <label for="fechaInicio">Fecha Inicio:</label>
+                <input type="date" id="fechaInicio" required>
+                <label for="fechaFin">Fecha Fin:</label>
+                <input type="date" id="fechaFin" required>
+                <button type="submit">Obtener Ventas</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <table id="ventasRangoTable">
+                <thead>
+                    <tr>
+                        <th>ID Venta</th>
+                        <th>Fecha Venta</th>
+                        <th>Subtotal</th>
+                        <th>Total</th>
+                        <th>Impuesto</th>
+                        <th>Empleado</th>
+                        <th>Cliente</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para regresar -->
+    <div id="backButton" title="Regresar" onclick="window.history.back()">
+        <img src="https://cdn-icons-png.flaticon.com/512/5397/5397386.png" alt="Regresar" />
+    </div>
+
+    <script src="../Js/reportes.js" defer></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
